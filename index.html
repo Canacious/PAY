@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>请选择支付方式</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 40px;
+            font-size: 1.8em;
+            text-align: center;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px; /* 按钮之间的间距 */
+            width: 80%; /* 按钮容器宽度 */
+            max-width: 400px; /* 最大宽度 */
+        }
+
+        .payment-button {
+            display: block;
+            width: 100%;
+            padding: 18px 25px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.3em;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .payment-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .payment-button:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .wechat-pay {
+            background-color: #28a745; /* 微信绿色 */
+        }
+
+        .wechat-pay:hover {
+            background-color: #218838;
+        }
+
+        .alipay-pay {
+            background-color: #007bff; /* 支付宝蓝色 */
+        }
+
+        .alipay-pay:hover {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.5em;
+                margin-bottom: 30px;
+            }
+
+            .payment-button {
+                padding: 15px 20px;
+                font-size: 1.2em;
+            }
+
+            .button-container {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>请选择支付方式</h1>
+    <div class="button-container">
+        <a href="https://imgur.com/a/mqARuLA" class="payment-button wechat-pay">微信支付</a>
+        <a href="https://imgur.com/a/gAHZ2uR" class="payment-button alipay-pay">支付宝支付</a>
+    </div>
+</body>
+</html>
