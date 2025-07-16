@@ -92,9 +92,42 @@
 </head>
 <body>
     <h1>请选择支付方式</h1>
-    <div class="button-container">
-        <a href="https://imgur.com/a/mqARuLA" class="payment-button wechat-pay">微信支付</a>
-        <a href="https://imgur.com/a/gAHZ2uR" class="payment-button alipay-pay">支付宝支付</a>
-    </div>
+<div class="button-container">
+    <button class="payment-button wechat-pay" onclick="showQR('wechat')">微信支付</button>
+    <button class="payment-button alipay-pay" onclick="showQR('alipay')">支付宝支付</button>
+</div>
+
+<!-- 新增显示二维码的容器 -->
+<div id="qrContainer" style="margin-top:40px; display:none; text-align:center;">
+    <img id="qrImage" src="" alt="二维码" style="max-width:320px; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.15);"/>
+    <div id="qrCaption" style="margin-top:10px; color:#666; font-size:1.1em;"></div>
+</div>
+
+<script>
+    const qrData = {
+        wechat: {
+            img: "https://raw.githubusercontent.com/Canacious/PAY/main/wx.jpg",
+            caption: "微信扫码支付"
+        },
+        alipay: {
+            img: "https://raw.githubusercontent.com/Canacious/PAY/main/zfb.jpg",
+            caption: "支付宝扫码支付"
+        }
+    };
+
+    function showQR(method) {
+        const container = document.getElementById("qrContainer");
+        const img = document.getElementById("qrImage");
+        const caption = document.getElementById("qrCaption");
+
+        img.src = qrData[method].img;
+        caption.textContent = qrData[method].caption;
+        container.style.display = "block";
+
+        // 页面滚动到二维码位置
+        container.scrollIntoView({ behavior: "smooth" });
+    }
+</script>
+
 </body>
 </html>
